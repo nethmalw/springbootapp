@@ -28,3 +28,18 @@ DELETE:
 localhost:8080/roles/NIC_number (delete existing role)
 
 **Created date and Last modified date will be stored
+
+
+Table creation in database:
+
+CREATE TABLE `role` (
+  `organization` varchar(100) DEFAULT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(60) DEFAULT NULL,
+  `nic_no` varchar(45) NOT NULL,
+  `role_type` enum('DRIVER','ASSISTANT') DEFAULT NULL,
+  `created_date` datetime(6) DEFAULT NULL,
+  `last_modified_date` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`nic_no`),
+  UNIQUE KEY `NIC_no_UNIQUE` (`nic_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
